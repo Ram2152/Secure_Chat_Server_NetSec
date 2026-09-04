@@ -323,19 +323,6 @@ bool rsa_verify(EVP_PKEY *pub, const std::string &msg, const std::string &sig)
     return ok;
 }
 
-std::string bytes_to_hex(const std::string &in)
-{
-    const char *d = "0123456789abcdef";
-    std::string out;
-    out.resize(in.size() * 2);
-    for (size_t i = 0; i < in.size(); i++) {
-        unsigned char b = (unsigned char)in[i];
-        out[2*i]   = d[(b >> 4) & 0xF];
-        out[2*i+1] = d[b & 0xF];
-    }
-    return out;
-}
-
 int hexval(char c)
 {
     if (c >= '0' && c <= '9') return c - '0';
