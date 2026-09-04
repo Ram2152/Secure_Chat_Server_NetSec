@@ -47,4 +47,7 @@ int validate_cert(X509 *cert, X509 *ca, const std::string &expected_cn, std::str
 bool rsa_sign(EVP_PKEY *priv, const std::string &msg, std::string &sig);
 bool rsa_verify(EVP_PKEY *pub, const std::string &msg, const std::string &sig);
 
+std::string bytes_to_hex(const std::string &in);
+bool hex_to_bytes(const std::string &hex, std::string &out);
+
 #endif /* CRYPTO_HH */
